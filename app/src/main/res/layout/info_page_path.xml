@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <TextView
+            android:id="@+id/nom"
+            android:layout_width="133dp"
+            android:layout_height="37dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/google_sans_regular"
+            android:text="Nom"
+            android:textColor="@color/orange_extia"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image"
+            app:layout_constraintVertical_bias="0.058" />
+
+        <TextView
+            android:id="@+id/heure"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/google_sans_regular"
+            android:text="15:10"
+            android:textColor="@color/green"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="294dp" />
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="138dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/google_sans_regular"
+            android:text="@string/Validate"
+            android:textColor="@color/grey"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="1dp"
+            app:layout_constraintTop_toBottomOf="@+id/point"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="16dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.058" />
+
+        <TextView
+            android:id="@+id/point"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/google_sans_regular"
+            android:text="142 Rue du Faubourg Saint-Antoine"
+            android:textColor="@color/grey"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/map"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nom"
+            app:layout_constraintVertical_bias="0.22" />
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="212dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context=".MapsActivity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

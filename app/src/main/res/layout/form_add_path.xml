@@ -10,31 +10,52 @@
         android:background="@color/white">
 
         <TextView
-            android:layout_width="10dp"
-            android:layout_height="100dp"
-            tools:layout_editor_absoluteX="145dp"
-            tools:layout_editor_absoluteY="124dp"></TextView>
-
-        <EditText
-            android:layout_width="100dp"
-            android:layout_height="10dp"
-            tools:layout_editor_absoluteX="172dp"
-            tools:layout_editor_absoluteY="150dp"></EditText>
+            android:id="@+id/textView1"
+            android:layout_width="130dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="116dp"
+            android:text="@string/date"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/datePicker1"
+            app:layout_constraintHorizontal_bias="0.362"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.0"></TextView>
 
         <TextView
-            android:layout_width="100dp"
+            android:id="@+id/textView2"
+            android:layout_width="130dp"
             android:layout_height="20dp"
+            android:layout_marginStart="36dp"
             android:text="@string/time"
-            tools:layout_editor_absoluteX="45dp"
-            tools:layout_editor_absoluteY="52dp"></TextView>
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="60dp"></TextView>
 
-        <EditText
-            android:layout_width="100dp"
-            android:layout_height="10dp"
-            tools:layout_editor_absoluteX="155dp"
-            tools:layout_editor_absoluteY="52dp"></EditText>
+        <TimePicker
+            android:id="@+id/TimePicker1"
+            android:layout_width="155dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="36dp"
+            android:timePickerMode="spinner"
+            app:layout_constraintBottom_toTopOf="@+id/datePicker1"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <DatePicker
+            android:id="@+id/datePicker1"
+            android:layout_width="157dp"
+            android:layout_height="85dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="488dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
+            android:id="@+id/button3"
             android:layout_width="177dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="116dp"
@@ -43,5 +64,20 @@
             android:text="@string/Validate"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:hint="@string/adress"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.714">
+
+        </EditText>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

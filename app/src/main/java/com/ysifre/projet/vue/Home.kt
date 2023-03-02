@@ -1,4 +1,4 @@
-package com.ysifre.projet
+package com.ysifre.projet.vue
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.ysifre.projet.R
 
 class Home: Fragment() {
     private lateinit var validateButton: Button
@@ -25,4 +26,5 @@ class Home: Fragment() {
             }
         }
     }
+
 }

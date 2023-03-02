@@ -1,7 +1,6 @@
-package com.ysifre.projet
+package com.ysifre.projet.vue
 
 import android.content.ContentValues
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.ysifre.projet.R
 
 class SignInFragment : Fragment() {
     lateinit var email : EditText
@@ -52,13 +52,13 @@ class SignInFragment : Fragment() {
         val passwordText = password.text.toString().trim()
         if(
             emailText.isBlank()) {
-            email.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.warning,0)
+            email.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.warning,0)
             return
         }
         else {
             email.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0)}
         if(passwordText.isBlank()) {
-            password.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.warning,0)
+            password.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.warning,0)
             return
         }
         else {

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.ysifre.projet.Home"
+        android:name="com.ysifre.projet.vue.Home"
         android:label="Home" >
         <action
             android:id="@+id/action_home_to_listTrajets"
@@ -15,11 +15,11 @@
     </fragment>
     <fragment
         android:id="@+id/listTrajets"
-        android:name="com.ysifre.projet.ListTrajets"
+        android:name="com.ysifre.projet.vue.ListTrajets"
         android:label="ListTrajets" />
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.ysifre.projet.SignInFragment"
+        android:name="com.ysifre.projet.vue.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.ysifre.projet.ForgotPasswordFragment"
+        android:name="com.ysifre.projet.vue.ForgotPasswordFragment"
         android:label="forgot_password_fragment"
         tools:layout="@layout/forgot_password_fragment" />
 </navigation>

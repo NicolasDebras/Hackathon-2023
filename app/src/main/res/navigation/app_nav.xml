@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.ysifre.projet.Home"
+        android:name="com.ysifre.projet.vue.Home"
         android:label="Home" >
         <action
             android:id="@+id/action_home_to_listTrajets"
@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/listTrajets"
-        android:name="com.ysifre.projet.ListTrajets"
+        android:name="com.ysifre.projet.vue.ListTrajets"
         android:label="ListTrajets" />
 </navigation>

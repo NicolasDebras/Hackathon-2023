@@ -1,4 +1,4 @@
-package com.ysifre.projet
+package com.ysifre.projet.vue
 
 import android.os.Bundle
 import android.view.LayoutInflater

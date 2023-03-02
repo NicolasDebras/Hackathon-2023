@@ -1,7 +1,8 @@
-package com.ysifre.projet
+package com.ysifre.projet.vue
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import fake.`package`.name.`for`.sync.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

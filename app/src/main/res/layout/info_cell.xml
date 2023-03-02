@@ -9,7 +9,9 @@
     app:cardElevation="10dp"
     android:background="?selectableItemBackground"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:layout_marginRight="5sp"
+    android:layout_marginBottom="5sp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,12 +31,12 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/editeur"
+            android:id="@+id/adress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="12dp"
             android:fontFamily="@font/google_sans_regular"
-            android:text="Editeur"
+            android:text="adresse"
             android:textColor="@color/grey"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,24 +48,38 @@
             android:id="@+id/distance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/google_sans_regular"
             android:text="XX KM"
             android:textColor="@color/green"
             android:textSize="10sp"
-            tools:layout_editor_absoluteX="51dp"
-            tools:layout_editor_absoluteY="36dp" />
+            app:layout_constraintBottom_toTopOf="@+id/nom"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/nom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
             android:fontFamily="@font/google_sans_regular"
             android:text="Non Covoit"
             android:textColor="@color/orange_extia"
             android:textSize="15sp"
-            app:layout_constraintStart_toEndOf="@+id/image"
-            tools:layout_editor_absoluteY="64dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/google_sans_regular"
+            android:text="Time"
+            android:textColor="@color/orange_extia"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="321dp"
+            tools:layout_editor_absoluteY="19dp" />
 
         <ImageView
             android:id="@+id/imageView"

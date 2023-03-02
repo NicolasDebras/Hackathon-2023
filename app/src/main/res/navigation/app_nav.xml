@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_nav"
-    app:startDestination="@id/home">
+    app:startDestination="@id/signInFragment">
 
     <fragment
         android:id="@+id/home"
@@ -16,4 +17,21 @@
         android:id="@+id/listTrajets"
         android:name="com.ysifre.projet.ListTrajets"
         android:label="ListTrajets" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.ysifre.projet.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.ysifre.projet.ForgotPasswordFragment"
+        android:label="forgot_password_fragment"
+        tools:layout="@layout/forgot_password_fragment" />
 </navigation>

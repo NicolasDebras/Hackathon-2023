@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Projet</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bienvenue">Bienvenue !</string>
+    <string name="veuillez_vous_connecter_ou_n_cr_er_un_nouveau_compte_n_pour_utiliser_l_application">Veuillez vous connecter ou \n créer un nouveau compte \n pour utiliser l’application.</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="cr_er_un_nouveau_compte">Créer un nouveau compte</string>
+    <string name="mot_de_passe_oubli">Mot de passe oublié</string>
+    <string name="inscription">Inscription</string>
+    <string name="veuillez_saisir_ces_diff_rentes_informations_afin_que_vos_listes_soient_sauvegard_es">Veuillez saisir ces différentes informations, afin que vos listes soient sauvegardées.</string>
+    <string name="nom_d_utilisateur">Nom d\'utilisateur</string>
+    <string name="verification_de_mot_de_passe">Verification de mot de passe</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="title_activity_forgot_password_fragment">ForgotPasswordFragment</string>
+    <string name="veuillez_saisir_votre_email_afin_de_r_initialiser_votre_mot_de_passe">Veuillez saisir votre email afin de réinitialiser votre mot de passe</string>
+    <string name="renvoyer_mon_mot_de_passe">Renvoyer mon mot de passe</string>
 </resources>

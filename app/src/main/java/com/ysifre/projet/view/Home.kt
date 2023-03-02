@@ -1,4 +1,4 @@
-package com.ysifre.projet
+package com.ysifre.projet.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +8,10 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.firestore.FirebaseFirestore
-import com.ysifre.projet.model.Employe
+import com.ysifre.projet.NetworkManagerDuration
+import com.ysifre.projet.R
+import com.ysifre.projet.model.GetEmployeesNetwork
 import kotlinx.coroutines.*
-import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
 
 
 class Home : Fragment() {
@@ -37,40 +36,21 @@ class Home : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val text = view.findViewById<TextView>(R.id.text)
-
+        val rechercheButton = view.findViewById<Button>(R.id.recherche)
+        rechercheButton.setOnClickListener {
+            findNavController().navigate(HomeDirections.actionHomeToListTrajets())
+        }
         val origin = "4 rue fernand leger saint cyr"
         val destination = "45 avenue des etats unis versailles"
         GlobalScope.launch(Dispatchers.Main) {
             val response = withContext(Dispatchers.IO) {
-                val employees = getEmployees()
+                val employees = GetEmployeesNetwork.getEmployees()
                 println("TEST TEST : $employees")
                 NetworkManagerDuration.getDuration(origin, destination).await()
             }
             activity?.runOnUiThread(java.lang.Runnable {
                 text.text = response.routes[0].legs[0].duration.text
             })
-        }
-    }
-
-
-    private suspend fun getEmployees(): List<Employe> = suspendCoroutine {
-        val db = FirebaseFirestore.getInstance()
-        val employeeRef = db.collection("Employe")
-
-        employeeRef.get().addOnCompleteListener { task ->
-            val employees = mutableListOf<Employe>()
-            if (task.isSuccessful) {
-                for (document in task.result) {
-                    val id = document.id
-                    val nom = document.getString("nom")
-                    val prenom = document.getString("prenom")
-                    val mail = document.getString("mail")
-                    val phone = document.getString("tel")
-                    val photo = document.getString("photo")
-                    employees.add(Employe(id, nom, prenom, mail, phone, photo))
-                }
-                it.resume(employees)
-            }
         }
     }
 }

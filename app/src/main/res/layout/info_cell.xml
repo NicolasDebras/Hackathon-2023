@@ -5,91 +5,70 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="10dp"
     android:background="?selectableItemBackground"
     android:clickable="true"
     android:focusable="true"
-    android:layout_marginRight="5sp"
-    android:layout_marginBottom="5sp">
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="30dp"
+    app:cardElevation="15dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:background="@color/white">
 
-
-
         <ImageView
-            android:id="@+id/image"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_margin="15dp"
-            android:scaleType="centerInside"
+            android:id="@+id/profile_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/adress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:fontFamily="@font/google_sans_regular"
-            android:text="adresse"
-            android:textColor="@color/grey"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/image"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.181" />
-
-        <TextView
-            android:id="@+id/distance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/google_sans_regular"
-            android:text="XX KM"
-            android:textColor="@color/green"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/nom"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/nom"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginBottom="12dp"
-            android:fontFamily="@font/google_sans_regular"
-            android:text="Non Covoit"
-            android:textColor="@color/orange_extia"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image" />
-
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/google_sans_regular"
-            android:text="Time"
-            android:textColor="@color/orange_extia"
-            android:textSize="25sp"
-            tools:layout_editor_absoluteX="321dp"
-            tools:layout_editor_absoluteY="19dp" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.049"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_marqueur_50" />
+            app:layout_constraintVertical_bias="0.16" />
+
+        <TextView
+            android:id="@+id/firstNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/google_sans_regular"
+            android:text="Name"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.218"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.121" />
+
+        <TextView
+            android:id="@+id/lastNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/google_sans_regular"
+            android:text="Name"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.369"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.121" />
+
+        <TextView
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/google_sans_regular"
+            android:textSize="15sp"
+            android:text="HEURE DEPART"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@id/profile_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

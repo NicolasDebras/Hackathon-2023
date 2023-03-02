@@ -1,7 +1,8 @@
-package com.ysifre.projet
+package com.ysifre.projet.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ysifre.projet.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

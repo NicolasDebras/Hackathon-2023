@@ -1,4 +1,4 @@
-package com.ysifre.projet
+package com.ysifre.projet.view
 
 import android.content.ContentValues
 import android.content.Intent
@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.ysifre.projet.R
 
 class ForgotPasswordFragment : Fragment() {
     lateinit var email : EditText
@@ -48,7 +49,7 @@ class ForgotPasswordFragment : Fragment() {
         val emailText = email.text.toString().trim()
 
         if(emailText.isBlank()) {
-            email.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.warning,0)
+            email.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.warning,0)
             return
         }
         auth.sendPasswordResetEmail(emailText).addOnCompleteListener{

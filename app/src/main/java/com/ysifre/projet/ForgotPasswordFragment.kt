@@ -59,6 +59,9 @@ class ForgotPasswordFragment : Fragment() {
             }
             Toast.makeText(requireContext(),"Email sent", Toast.LENGTH_SHORT).show()
             Log.d(ContentValues.TAG,"Email sent") }
+            else {
+            Toast.makeText(requireContext(),"Email not found", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

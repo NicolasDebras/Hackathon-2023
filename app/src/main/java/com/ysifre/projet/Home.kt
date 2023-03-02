@@ -8,10 +8,15 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.firestore.FirebaseFirestore
+import com.ysifre.projet.model.Employe
 import kotlinx.coroutines.*
+import kotlin.coroutines.resume
+import kotlin.coroutines.suspendCoroutine
 
-class Home: Fragment() {
-    private lateinit var validateButton: Button
+
+class Home : Fragment() {
+    private lateinit var plus_button: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,14 +24,13 @@ class Home: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.home, container, false).apply {
-            validateButton = findViewById<Button>(R.id.validateButton) as Button
-            validateButton.setOnClickListener {
+            plus_button = findViewById<Button>(R.id.plus_button) as Button
+            plus_button.setOnClickListener {
                 findNavController().navigate(
                     HomeDirections.actionHomeToListTrajets()
                 )
             }
         }
-
     }
 
     @OptIn(DelicateCoroutinesApi::class)
@@ -38,12 +42,38 @@ class Home: Fragment() {
         val destination = "45 avenue des etats unis versailles"
         GlobalScope.launch(Dispatchers.Main) {
             val response = withContext(Dispatchers.IO) {
-                NetworkManagerDuration.getDuration(origin, destination).await();
+                val employees = getEmployees()
+                println("TEST TEST : $employees")
+                NetworkManagerDuration.getDuration(origin, destination).await()
             }
             activity?.runOnUiThread(java.lang.Runnable {
                 text.text = response.routes[0].legs[0].duration.text
-                println("TEST : ${response.routes[0].legs[0].duration.text}")
             })
         }
     }
+
+
+    private suspend fun getEmployees(): List<Employe> = suspendCoroutine {
+        val db = FirebaseFirestore.getInstance()
+        val employeeRef = db.collection("Employe")
+
+        employeeRef.get().addOnCompleteListener { task ->
+            val employees = mutableListOf<Employe>()
+            if (task.isSuccessful) {
+                for (document in task.result) {
+                    val id = document.id
+                    val nom = document.getString("nom")
+                    val prenom = document.getString("prenom")
+                    val mail = document.getString("mail")
+                    val phone = document.getString("tel")
+                    val photo = document.getString("photo")
+                    employees.add(Employe(id, nom, prenom, mail, phone, photo))
+                }
+                it.resume(employees)
+            }
+        }
+    }
 }
+
+
+

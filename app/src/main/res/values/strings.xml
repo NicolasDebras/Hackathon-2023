@@ -27,4 +27,5 @@
     <string name="title_activity_forgot_password_fragment">ForgotPasswordFragment</string>
     <string name="veuillez_saisir_votre_email_afin_de_r_initialiser_votre_mot_de_passe">Veuillez saisir votre email afin de réinitialiser votre mot de passe</string>
     <string name="renvoyer_mon_mot_de_passe">Renvoyer mon mot de passe</string>
+    <string name="find">Recherche</string>
 </resources>

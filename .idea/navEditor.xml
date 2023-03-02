@@ -8,6 +8,7 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+<<<<<<< HEAD
                   <entry key="forgotPasswordFragment">
                     <value>
                       <LayoutPositions>
@@ -20,6 +21,8 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+=======
+>>>>>>> origin/feature/design
                   <entry key="home">
                     <value>
                       <LayoutPositions>
@@ -53,6 +56,7 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+<<<<<<< HEAD
                   <entry key="signInFragment">
                     <value>
                       <LayoutPositions>
@@ -79,6 +83,8 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+=======
+>>>>>>> origin/feature/design
                 </map>
               </option>
             </LayoutPositions>

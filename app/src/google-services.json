@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "985855711309",
+    "project_id": "go-to-work-e8dbe",
+    "storage_bucket": "go-to-work-e8dbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985855711309:android:f0204dece0a4bef10ee404",
+        "android_client_info": {
+          "package_name": "com.ysifre.projet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985855711309-sijeqc559kaqi4nmipq8hn2lvgk5nubh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-20bdIxfVvdaXBJ4iJTkpdadPGxER2Rk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985855711309-sijeqc559kaqi4nmipq8hn2lvgk5nubh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

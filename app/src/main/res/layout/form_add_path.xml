@@ -1,6 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="100dp"
+            tools:layout_editor_absoluteX="145dp"
+            tools:layout_editor_absoluteY="124dp"></TextView>
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            tools:layout_editor_absoluteX="172dp"
+            tools:layout_editor_absoluteY="150dp"></EditText>
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:text="@string/time"
+            tools:layout_editor_absoluteX="45dp"
+            tools:layout_editor_absoluteY="52dp"></TextView>
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="52dp"></EditText>
+
+        <Button
+            android:layout_width="177dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="116dp"
+            android:layout_marginBottom="44dp"
+            android:background="@drawable/rounded_button"
+            android:text="@string/Validate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

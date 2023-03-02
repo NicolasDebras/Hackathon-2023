@@ -29,4 +29,7 @@
     <string name="renvoyer_mon_mot_de_passe">Renvoyer mon mot de passe</string>
     <string name="find">Recherche</string>
     <string name="Validate">VALIDER</string>
+    <string name="adress">Votre adresse : </string>
+    <string name="date">Jour de départ : </string>
+    <string name="time">Heure de départ : </string>
 </resources>

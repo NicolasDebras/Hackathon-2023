@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
 import kotlinx.coroutines.*
 import java.util.concurrent.TimeUnit
 
@@ -17,6 +18,7 @@ class ListTrajets : Fragment() {
     lateinit var hour : String
     lateinit var recyclerView: RecyclerView
     private lateinit var database: FirebaseDatabase
+    private lateinit var IDnumber: TextView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -33,13 +35,16 @@ class ListTrajets : Fragment() {
         database = FirebaseDatabase.getInstance()
         hour = ListTrajetsArgs.fromBundle(requireArguments()).hour
         val user_home = ListTrajetsArgs.fromBundle(requireArguments()).address
+        //IDnumber = view.findViewById(R.id.hour)
+
         backButton.setOnClickListener {
             findNavController().navigateUp()
         }
         textView.text = ListTrajetsArgs.fromBundle(requireArguments()).address
-        val driver1 = Driver("da", "da", "4 rue fernand leger saint cyr", "da",0,4)
-        val driver2 = Driver("da2", "da", "45 avenue des etats unis", "da2",0,4)
-        val driver3 = Driver("da3", "d3a", "30 avenue de paris versailles", "da3",0,4)
+        /*
+        val driver1 = Driver("da", "da", "4 rue fernand leger saint cyr",0,4)
+        val driver2 = Driver("da2", "da", "45 avenue des etats unis", 0,4)
+        val driver3 = Driver("da3", "d3a", "30 avenue de paris versailles", 0,4)
         val Drivers = mutableListOf<Driver>()
         Drivers.add(driver1)
         Drivers.add(driver2)
@@ -47,6 +52,8 @@ class ListTrajets : Fragment() {
         val rides = Rides(Drivers)
         val databaseRides = database.getReference().child("Rides").setValue(rides)
         val database_rides = database.getReference().child("Rides")
+
+         */
         val drivers_filtered = mutableListOf<Driver>()
         var totalTimeToSend : Long = 0
         var lastNameToSend : String = ""
@@ -55,7 +62,7 @@ class ListTrajets : Fragment() {
                 GlobalScope.launch(Dispatchers.Main) {
                     for (driver in drivers) {
                         val directTime = withContext(Dispatchers.IO) {
-                            NetworkManagerDuration.getDuration(driver.address, "Viroflay").await()
+                            NetworkManagerDuration.getDuration(driver.address, "242 rue Faubourg Saint-Antoine 75012").await()
                         }
                         val directTimeValue = directTime.routes[0].legs[0].duration.value
 
@@ -65,14 +72,15 @@ class ListTrajets : Fragment() {
                         val part1Value = part1.routes[0].legs[0].duration.value
 
                         val part2 = withContext(Dispatchers.IO) {
-                            NetworkManagerDuration.getDuration(user_home, "Viroflay").await()
+                            NetworkManagerDuration.getDuration(user_home, "242 rue Faubourg Saint-Antoine 75012").await()
                         }
-                        val part2Value = directTime.routes[0].legs[0].duration.value
-                        if(checkIfOk(directTimeValue,part1Value,part2Value)) {
+                        val part2Value = part2.routes[0].legs[0].duration.value
+                        if(checkIfOk(directTimeValue,part1Value,part2Value) && driver.seats>=1 && (driver.totalTime + 10.toLong() <= directTimeValue)) {
+                            totalTimeToSend = getTotalDuration(part1Value,part2Value)
                             drivers_filtered.add(driver)
                             println(driver.address)
                         }
-                        totalTimeToSend = getTotalDuration(part1Value,part2Value)
+
 
                     }
                     activity?.runOnUiThread(java.lang.Runnable {
@@ -80,7 +88,7 @@ class ListTrajets : Fragment() {
                             layoutManager = GridLayoutManager(context, 1)
                             adapter = ListAdapter(drivers_filtered, object : OnProductListener {
                                 override fun onClicked(driver: Driver, position: Int) {
-                                    lastNameToSend = driver.lastName
+                                    lastNameToSend = driver.number
                                     findNavController().navigate(ListTrajetsDirections.actionListTrajetsToConfirmationPage(totalTimeToSend,lastNameToSend))
                                 }
                             })
@@ -103,7 +111,10 @@ class ListTrajets : Fragment() {
         val minutes_1 = TimeUnit.SECONDS.toMinutes(part1.toLong())
         val minutes_2 = TimeUnit.SECONDS.toMinutes(part2.toLong())
         println("$minutes_total = $minutes_1 + $minutes_2")
-        return minutes_total + 10 >= minutes_1 + minutes_2;
+       if ((minutes_total + 5.toLong()) >= (minutes_1 + minutes_2))
+           return true
+        else
+            return false
     }
 
     fun getTotalDuration(part1: Int, part2: Int) : Long {
@@ -122,9 +133,9 @@ class ListTrajets : Fragment() {
                         snapshot.child("firstName").getValue().toString(),
                         snapshot.child("lastName").getValue().toString(),
                         snapshot.child("address").getValue().toString(),
-                        snapshot.child("number").getValue().toString(),
                         snapshot.child("totalTime").getValue() as Long,
                         snapshot.child("seats").getValue() as Long,
+                        snapshot.child("number").getValue().toString()
                     )
                     drivers_test.add(driver)
                 }
@@ -149,9 +160,9 @@ class ListTrajets : Fragment() {
         var firstName: String,
         var lastName: String,
         var address: String,
-        var number: String,
         var totalTime: Long,
         var seats: Long,
+        var number : String
         )
 
 
@@ -188,14 +199,14 @@ class ListTrajets : Fragment() {
         val imageView: ImageView = itemView.findViewById(R.id.profile_image)
         val firstNameText: TextView = itemView.findViewById(R.id.firstNameText)
         val lastNameText: TextView = itemView.findViewById(R.id.lastNameText)
-        val hourText: TextView = itemView.findViewById(R.id.hour)
+        val numberID: TextView = itemView.findViewById(R.id.hour)
         val validateButton = v.findViewById<ImageButton>(R.id.validate_button)
 
 
         fun updateGame(driver: ListTrajets.Driver) {
             firstNameText.text = driver.firstName
             lastNameText.text = driver.lastName
-            //hourText.text =
+            numberID.text = driver.number
 
             /*val url = driver.image
 

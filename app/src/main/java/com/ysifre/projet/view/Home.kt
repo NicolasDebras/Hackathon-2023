@@ -19,8 +19,8 @@ import kotlinx.coroutines.*
 class Home : Fragment() {
     private lateinit var plus_button: ImageButton
     private lateinit var editText: EditText
-    private lateinit var clock : TimePicker
-    private lateinit var hour : String
+    private lateinit var clock: TimePicker
+    private lateinit var hour: String
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -44,6 +44,9 @@ class Home : Fragment() {
         clock.setIs24HourView(true);
         hour = clock.hour.toString() + ":" + clock.minute.toString()
 
+        plus_button.setOnClickListener {
+            findNavController().navigate(HomeDirections.actionHomeToAddRide())
+        }
         rechercheButton.setOnClickListener {
             search()
         }
@@ -51,15 +54,18 @@ class Home : Fragment() {
     }
 
     private fun search() {
-        if(editText.text.toString().isBlank()) {
-            editText.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.warning,0)
+        if (editText.text.toString().isBlank()) {
+            editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.warning, 0)
             return
-        }
-        else {
-            findNavController().navigate(HomeDirections.actionHomeToListTrajets(editText.text.toString(),hour))
+        } else {
+            findNavController().navigate(
+                HomeDirections.actionHomeToListTrajets(
+                    editText.text.toString(),
+                    hour
+                )
+            )
         }
     }
-
 
 
 }

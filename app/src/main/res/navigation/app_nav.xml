@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_home_to_listTrajets"
             app:destination="@id/listTrajets" />
+        <action
+            android:id="@+id/action_home_to_addRide"
+            app:destination="@id/addRide" />
     </fragment>
     <fragment
         android:id="@+id/listTrajets"
@@ -55,5 +58,13 @@
         <argument
             android:name="lastNameToSend"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRide"
+        android:name="com.ysifre.projet.view.AddRide"
+        android:label="AddRide" >
+        <action
+            android:id="@+id/action_addRide_to_home"
+            app:destination="@id/home" />
     </fragment>
 </navigation>

@@ -31,15 +31,15 @@
 
 
         <ImageView
+            android:background="@drawable/profile_user_svgrepo_com"
             android:id="@+id/profile_image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.049"
+            android:layout_marginStart="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.16" />
+            />
 
         <TextView
             android:id="@+id/firstNameText"
@@ -47,13 +47,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/google_sans_regular"
             android:text="Name"
-            android:textSize="15sp"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.218"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/profile_image"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.121" />
+            android:layout_marginStart="20dp"/>
 
         <TextView
             android:id="@+id/lastNameText"
@@ -61,13 +59,10 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/google_sans_regular"
             android:text="Name"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.369"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.121" />
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@id/firstNameText"
+            app:layout_constraintTop_toTopOf="@id/firstNameText"
+            android:layout_marginStart="20dp"/>
 
         <TextView
             android:id="@+id/hour"
@@ -75,11 +70,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/google_sans_regular"
             android:textSize="15sp"
-            android:text="HEURE DEPART"
+            android:text="ID NUMBER"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="@id/profile_image"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="@id/firstNameText"
+            app:layout_constraintEnd_toEndOf="@id/lastNameText"
+            app:layout_constraintTop_toBottomOf="@id/lastNameText"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

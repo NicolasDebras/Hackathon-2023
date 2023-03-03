@@ -28,4 +28,9 @@
     <string name="veuillez_saisir_votre_email_afin_de_r_initialiser_votre_mot_de_passe">Veuillez saisir votre email afin de réinitialiser votre mot de passe</string>
     <string name="renvoyer_mon_mot_de_passe">Renvoyer mon mot de passe</string>
     <string name="find">Recherche</string>
+    <string name="adress">Votre adresse : </string>
+    <string name="date">Jour de départ : </string>
+    <string name="time">Heure de départ : </string>
+    <string name="name">Votre non et prenom : </string>
+    <string name="seat">Nombre de place</string>
 </resources>

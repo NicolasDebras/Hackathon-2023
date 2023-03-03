@@ -20,6 +20,7 @@ class DetailRideDriverViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     var selectedRide: Course!
     var passengers : [Employe] = []
+    var selectedPassenger: Employe?
     
     var userId: String = ""
     
@@ -126,6 +127,14 @@ class DetailRideDriverViewController: UIViewController {
     }
 
     @IBAction func callPassenger(_ sender: UIButton) {
+        guard let passenger = self.selectedPassenger else { return  }
+        let phone = passenger.tel
+        if let phoneCallURL = URL(string: "tel://\(phone)") {
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
+            }
+          }
     }
 }
 extension DetailRideDriverViewController: UITableViewDelegate,UITableViewDataSource{
@@ -142,6 +151,7 @@ extension DetailRideDriverViewController: UITableViewDelegate,UITableViewDataSou
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let passenger = self.passengers[indexPath.row]
+        self.selectedPassenger = passenger
         self.nomLabel.text = "\(passenger.nom) \(passenger.prenom)"
         self.phoneButton.setTitle(passenger.tel, for: .normal)
         self.imageView.kf.setImage(with: URL(string: passenger.photo))

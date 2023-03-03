@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="ToolbarTheme" parent="android:Theme.Holo">
+        <item name="actionMenuTextColor">@color/grey</item>
+    </style>
+</resources>

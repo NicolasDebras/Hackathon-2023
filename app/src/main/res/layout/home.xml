@@ -21,9 +21,7 @@
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
-        android:background="@drawable/layered_waves_haikei"
-        />
+        android:background="@drawable/layered_waves_haikei" />
     <ImageButton
         android:id="@+id/profile_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,14 +56,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="150dp"
             android:background="@color/white">
 
             <EditText
-                android:id="@+id/phone"
+                android:id="@+id/address"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="textPostalAddress"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -73,31 +71,29 @@
 
             <Button
                 android:id="@+id/recherche"
-                android:layout_width="260dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="44dp"
                 android:background="@drawable/roundedbutton"
                 android:text="@string/find"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <ToggleButton
-                android:id="@+id/simpleToggleButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="272dp"
-                android:layout_marginTop="44dp"
-                android:background="@drawable/roundedbutton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.562"
-                app:layout_constraintStart_toStartOf="@+id/recherche"
-                app:layout_constraintTop_toTopOf="parent" />
+            <TimePicker
+                android:id="@+id/clock"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:timePickerMode="spinner"
+                app:layout_constraintStart_toEndOf="@id/recherche"
+                app:layout_constraintTop_toBottomOf="@id/address" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-    <Button
+    <ImageButton
         android:id="@+id/plus_button"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="30dp"
@@ -105,8 +101,6 @@
         android:layout_marginBottom="70dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/round_button"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="hello"
-        android:textColor="#fff" />
+        android:background="@drawable/plus_svgrepo_com"
+        android:gravity="center_vertical|center_horizontal"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

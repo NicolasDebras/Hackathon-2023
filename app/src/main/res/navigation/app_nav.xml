@@ -16,7 +16,17 @@
     <fragment
         android:id="@+id/listTrajets"
         android:name="com.ysifre.projet.ListTrajets"
-        android:label="ListTrajets" />
+        android:label="ListTrajets" >
+        <argument
+            android:name="address"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_listTrajets_to_confirmationPage"
+            app:destination="@id/confirmationPage" />
+        <argument
+            android:name="hour"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.ysifre.projet.view.SignInFragment"
@@ -34,4 +44,16 @@
         android:name="com.ysifre.projet.view.ForgotPasswordFragment"
         android:label="forgot_password_fragment"
         tools:layout="@layout/forgot_password_fragment" />
+    <fragment
+        android:id="@+id/confirmationPage"
+        android:name="com.ysifre.projet.view.ConfirmationPage"
+        android:label="fragment_confirmation_page"
+        tools:layout="@layout/fragment_confirmation_page" >
+        <argument
+            android:name="totalTimeToSend"
+            app:argType="long" />
+        <argument
+            android:name="lastNameToSend"
+            app:argType="string" />
+    </fragment>
 </navigation>

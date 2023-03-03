@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DriverViewController" customModule="hackathon" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="bMb-0t-WgS" id="FCn-Vw-qEC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="0yz-lc-5Y0">
+                    <rect key="frame" x="0.0" y="768" width="393" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Pq-r2-RpH">
+                            <rect key="frame" x="0.0" y="0.0" width="128.33333333333334" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemPinkColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="house.circle" catalog="system" title="Home">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="homeTapped:" destination="-1" eventType="touchUpInside" id="Vkc-4N-RaW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8T-IN-JEY">
+                            <rect key="frame" x="132.33333333333331" y="0.0" width="128.33333333333331" height="50"/>
+                            <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="car.circle.fill" catalog="system" title="Conducteur">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKL-jA-LYT">
+                            <rect key="frame" x="264.66666666666669" y="0.0" width="128.33333333333331" height="50"/>
+                            <color key="tintColor" systemColor="systemPinkColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="figure.wave.circle" catalog="system" title="Passager">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="passengerTapped:" destination="-1" eventType="touchUpInside" id="i9Q-2p-TkS"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="0r0-qH-rQo"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFj-CF-sLS">
+                    <rect key="frame" x="0.0" y="129" width="393" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes voyages conducteurs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrY-uf-ZB6">
+                            <rect key="frame" x="5" y="5" width="383" height="50"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="hrY-uf-ZB6" secondAttribute="bottom" constant="5" id="INe-AS-IZv"/>
+                        <constraint firstAttribute="trailing" secondItem="hrY-uf-ZB6" secondAttribute="trailing" constant="5" id="TCK-eE-0nR"/>
+                        <constraint firstItem="hrY-uf-ZB6" firstAttribute="leading" secondItem="xFj-CF-sLS" secondAttribute="leading" constant="5" id="WBA-vo-IaL"/>
+                        <constraint firstItem="hrY-uf-ZB6" firstAttribute="top" secondItem="xFj-CF-sLS" secondAttribute="top" constant="5" id="tWM-f8-N5k"/>
+                        <constraint firstAttribute="height" constant="60" id="wZg-vX-6LW"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bMb-0t-WgS">
+                    <rect key="frame" x="0.0" y="189" width="393" height="579"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nv6-Kf-2VI">
+                    <rect key="frame" x="0.0" y="71" width="100" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="1LU-UC-XwV"/>
+                        <constraint firstAttribute="width" constant="100" id="qFn-he-Roj"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemPinkColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="person.circle.fill" catalog="system" title="Profil"/>
+                    <connections>
+                        <action selector="profilTapped:" destination="-1" eventType="touchUpInside" id="xrx-oF-duY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hj6-f9-8mh">
+                    <rect key="frame" x="213" y="71" width="180" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="apJ-vF-ttC"/>
+                        <constraint firstAttribute="width" constant="180" id="zub-BA-x6P"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemPinkColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="plus.circle.fill" catalog="system" title="ajouter trajet"/>
+                    <connections>
+                        <action selector="addCourse:" destination="-1" eventType="touchUpInside" id="0Jr-sL-1WW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="nv6-Kf-2VI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3Wy-h9-704"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xFj-CF-sLS" secondAttribute="trailing" id="7s1-mo-rDX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bMb-0t-WgS" secondAttribute="trailing" id="C8W-Ho-L4j"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0yz-lc-5Y0" secondAttribute="bottom" id="Crj-dg-gGO"/>
+                <constraint firstAttribute="trailing" secondItem="0yz-lc-5Y0" secondAttribute="trailing" id="E6h-uO-9qK"/>
+                <constraint firstItem="0yz-lc-5Y0" firstAttribute="top" secondItem="bMb-0t-WgS" secondAttribute="bottom" id="FpC-ZU-5eo"/>
+                <constraint firstItem="xFj-CF-sLS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PAz-Im-egj"/>
+                <constraint firstItem="0yz-lc-5Y0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TTD-V9-AYP"/>
+                <constraint firstItem="nv6-Kf-2VI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="b8y-b1-DgW"/>
+                <constraint firstItem="xFj-CF-sLS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="mRX-qv-48G"/>
+                <constraint firstItem="bMb-0t-WgS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oQl-l2-a5Z"/>
+                <constraint firstItem="bMb-0t-WgS" firstAttribute="top" secondItem="xFj-CF-sLS" secondAttribute="bottom" id="uyj-fq-z4P"/>
+                <constraint firstItem="Hj6-f9-8mh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="wkq-Vb-oHI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hj6-f9-8mh" secondAttribute="trailing" id="yFG-mF-kvQ"/>
+            </constraints>
+            <point key="canvasLocation" x="28" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="car.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="figure.wave.circle" catalog="system" width="128" height="123"/>
+        <image name="house.circle" catalog="system" width="128" height="123"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
